@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root "top#index"
 
-  #classesへのroutes
-  get '/classes' => 'classes#index'
+  #lecturesへのroutes
+  get '/lectures' => 'lectures#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
