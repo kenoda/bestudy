@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   root "top#index"
 
   #lecturesへのroutes
-  get '/lectures' => 'lectures#index'
+  get 'lectures' => 'lectures#index'
   get 'lectures/new' => 'lectures#new'
   post 'lectures' => 'lectures#create'
+
+  #studentへのroutes
+  get 'students' => 'students#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
