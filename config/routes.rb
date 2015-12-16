@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #lecturesへのroutes
   get '/lectures' => 'lectures#index'
   get 'lectures/new' => 'lectures#new'
+  post 'lectures' => 'lectures#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
