@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root "top#index"
+
+  #classesへのroutes
+  root "classes#index"
+  get 'classes' => 'classes#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
