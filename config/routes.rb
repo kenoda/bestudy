@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   #classesへのroutes
   # root "classes#index"
-  get 'classes' => 'classes#index'
+  get '/classes' => 'classes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
