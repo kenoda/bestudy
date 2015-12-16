@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "top#index"
 
   #classesへのroutes
-  root "classes#index"
+  # root "classes#index"
   get 'classes' => 'classes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
