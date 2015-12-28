@@ -1,0 +1,11 @@
+<div class="contents row">
+    <%= form_tag('/students', method: :post) do %>
+      <h3>
+        生徒の名前を記入
+      </h3>
+      <input placeholder="生徒名" type="string" name="name">
+      <input placeholder="期間" type="string" name="season">
+      <textarea cols="30" name="description" placeholder="生徒の説明" rows="10"></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+</div>

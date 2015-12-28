@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   #studentへのroutes
   get 'students' => 'students#index'
+  get 'students/new' => 'students#new'
+  post 'students' => 'students#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
