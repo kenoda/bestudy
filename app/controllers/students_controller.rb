@@ -10,6 +10,9 @@ class StudentsController < ApplicationController
     Student.create(name: params[:name], description: params[:description])
   end
 
+  def show
+  end
+
   private
   def lecture_params
     params.permit(:name, :description)
