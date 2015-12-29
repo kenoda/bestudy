@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :lectures, only: [:index, :show, :new, :create]
 
   #studentへのroutes
-  resources :students, only: :index, :show, :new, :create do
-    resources :lectures_students, only: [:new, :create]
-  end
+  # resources :students, only: :index, :show, :new, :create do
+  #   resources :lectures_students, only: [:new, :create]
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
