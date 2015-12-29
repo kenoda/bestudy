@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   root "top#index"
 
   #lecturesへのroutes
-  resources :lectures, only: [:index, :show, :new, :create]
+  resources :lectures, only: [:index, :show, :new, :create] do
+    resources :students, only: [:index]
+    collection do
+      get 'search'
+    end
+  end
+
 
   #studentへのroutes
   resources :students, only: [:index, :show, :new, :create] do
