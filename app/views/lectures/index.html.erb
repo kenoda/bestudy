@@ -1,3 +1,5 @@
 ここに教室一覧が時系列で表示される、それをクリックすると各教室ページへと飛ぶ
-<%= render partial: "lecture", collection: @lectures %>
+<% @lectures.each do |lecture| %>
+  <a href="lectures/<%= lecture.id %>"> <%= lecture.name %></a>
+<% end %>
 

@@ -1,19 +1,15 @@
-<%= form_for [@product, @review] do |f| %>
+<%= form_for [@student, @lectures_student] do |f| %>
   <div style="margin: 8px 0">
-    <%= f.label :nickname, style: { 'margin-right' => 8 } %>
-    <%= f.text_field :nickname, placeholder: 'nickname', value: '' %>
+    <%= f.label :テスト評価, style: { 'margin-right' => 8 } %>
+    <%= f.text_area :test_result, placeholder: 'テスト評価', style: 'width: 10%;height: 10px;'%>
   </div>
   <div style="margin: 8px 0">
-    <%= f.label :評価, style: { 'margin-right' => 8 } %>
-    <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
-  </div>
-  <div style="margin: 8px 0">
-    <%= f.text_area :review, placeholder: 'レビューを書いてね！', style: 'width: 100%;height: 300px;' %>
+    <%= f.text_area :descripition, placeholder: '生徒の評価を自由記述で書く', style: 'width: 100%;height: 300px;' %>
   </div>
   <div class="row">
     <div class="col10 push1">
       <%= button_tag type: "submit", class: "btn btn--block" do %>
-              投稿する<i class="icon-arrow-right"></i>
+      投稿する<i class="icon-arrow-right"></i>
       <% end %>
     </div>
   </div>
