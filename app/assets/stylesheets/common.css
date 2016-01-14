@@ -97,10 +97,16 @@ input {
     display: block;
     content: "";
     margin: 10px;
-    padding: 2px;
+    padding: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.41);
 }
 input[placeholder] {
     padding-bottom: 5px;
+}
+
+input.btn.btn-primary.withripple {
+    background-color: rgba(128, 128, 128, 0.18);
+    font-size: 15px;
 }
 
 textarea {
@@ -120,26 +126,25 @@ textarea {
 }
 
 .log-up {
-    background-color: rgba(130, 133, 241, 0.06);
+    /*background-color: rgba(130, 133, 241, 0.06);*/
     width: 100%;
     margin: auto;
-    border: blue;
+    /*border: blue;*/
 }
 
 .log-in {
-    background-color: rgba(130, 133, 241, 0.06);
-    width: 590px;
+    width: 100%;
     margin: auto;
-    border: blue;
 }
 
 .form_box .form-group {
     width: 330px;
-    text-align: center;
-    margin: 0 auto;
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
     display: block;
     padding: 10px 0;
     font-size: 12px;
+    margin-bottom: 2px;
 }
 
 .more_link_box {
