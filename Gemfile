@@ -50,7 +50,6 @@ group :production, :staging do
 end
 
 group :production do
-  gem 'rails_12factor'
   gem 'pg'
 end
   gem 'pry-rails'
