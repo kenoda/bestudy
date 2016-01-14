@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   #lecturesへのroutes
-  resources :lectures, only: [:index, :show, :new, :create] do
+  resources :lectures, only: [:index, :show, :new, :create] do 
     resources :students, only: [:index, :show, :new, :create] do
       resources :tests, only: [:new, :create]
     end

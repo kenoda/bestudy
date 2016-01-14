@@ -14,10 +14,21 @@ class StudentsController < ApplicationController
   end
 
   def show
+    # binding.pry
     @student =Student.find(params[:id])
-    @lecture = Lecture.find(params[:id])
+    @lecture = Lecture.find(params[:lecture_id])
     @test = Test.all
-    @bfilter = Bfilter.new
+    bfilter = Bfilter.new
+    lecture_tests = []
+    students = @lecture.students
+    students.each do |student|
+      lecture_tests << student.tests
+    end
+    lecture_tests.flatten.each do |test|
+      bfilter.train(test.description, test.result)
+    end
+    @forecast = bfilter.classifier(@test[0].description)
+    # binding.pry
   end
 
   private

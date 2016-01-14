@@ -8,8 +8,12 @@ class LecturesController < ApplicationController
   end
 
   def create
-    # Lecture.create(name: params[:name], season: params[:season], description: params[:description])
-    Lecture.create(create_params)
+    Lecture.create(name: params[:name], season: params[:season], description: params[:description])
+#     Lecture.create(create_params)
+#     lecture1 =Bfilter.new
+#     doc ="真面目に勉強している"
+# lecture1.train(doc, "A")
+# lecture1.classifier("すごいよ") => B
 
   end
 
