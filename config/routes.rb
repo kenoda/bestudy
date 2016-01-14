@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
+
+
+  #lecturesへのroutes
+  resources :lectures, only: [:index, :show, :new, :create] do
+    resources :students, only: [:index, :show, :new, :create] do
+      resources :tests, only: [:new, :create]
+    end
+  end
+
   devise_for :users
   resources :users, only: [:show]
   root "top#index"
-
-  #lecturesへのroutes
-  resources :lectures, only: [:index, :show, :new, :create]
-
   #studentへのroutes
-  resources :students, only: [:index, :show, :new, :create] do
-     resources :lectures_students, only: [:new, :create]
-  end
+  # resources :students, only: [:index, :show, :new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

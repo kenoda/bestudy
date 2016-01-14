@@ -1,4 +1,14 @@
-ここに教室の詳細情報が表示され、生徒一覧も表示される
-<%= @lecture.name %>
-そして生徒をそれぞれクリックすると、生徒の情報を登録できる（投稿機能）
-<!-- <%= @lecture.students.name%> -->
+  <div class="lecture">
+    <h1>教室タイトル：<%= @lecture.name %></h1>
+    <h2>教室の説明：<%= @lecture.description %></h2>
+    <h2>生徒一覧</h2>
+    <div class="lecture_all">
+    <% @lecture.students.each do |student| %>
+      <div class="lecture_name">
+        <h3><%= link_to student.name, lecture_student_path(lecture_id: @lecture) %></h3>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <h3><a href="<%= @lecture.id %>/students/new">生徒を追加する</a></h3>
+  <h3><a href="/lectures"> 教室一覧へもどる</a></h3>

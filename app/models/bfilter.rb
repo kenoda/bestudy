@@ -4,6 +4,11 @@ require 'set'
 
 require_relative "morphological"
 
+# lecture1 =Bfilter.new
+# doc ="真面目に勉強している"
+# lecture1.train(doc, "A")
+# lecture1.classifier("テックキャンプでやっているよ") => B
+
 def getwords(doc)
   Morphological::split(doc)
 end
@@ -102,10 +107,4 @@ class Bfilter
     best
   end
 end
-
-
-
-
-
-
 

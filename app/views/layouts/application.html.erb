@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang= "ja">
 <head>
+  <meta charset= "utf-8">
   <title>Bestudy</title>
+  <meta name ="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="http://code.jquery.com/jquery.min.js"></script><script src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $("#menubtn").click(function(){
+        $("#menu").slideToggle();
+      });
+    });
+  </script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  </meta>
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+  <![endif]-->
 </head>
 <body>
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-site">
+        <div class="site">
+
+        <h1><a href="/"> Bestudy</a></h1>
+        </div>
+      </div>
+      <div class="header-nav">
+        <button type="button" id= "menubtn">
+          <i class="fa fa-bars"></i><span>MENU</span>
+        </button>
+        <nav class ="menu" id="menu">
+          <ul>
+            <li><a href="/">トップ</a></li>
+            <li><a href="">サービス概要</a></li>
+            <li><a href="">運営チーム</a></li>
+            <li><a href="">会員登録</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
 <%= render partial: 'common/header' %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
-
+  
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="copyright">
+        <p>Copyright &copy; Bestudy</p>
+      </div>
+    </div>
+  </div>
 </body>
-</html>
+

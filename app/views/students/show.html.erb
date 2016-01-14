@@ -1,1 +1,9 @@
-<a href="student/<%= @student.id %>/lectures_students/new">この作品を投稿する</a>
+  <h2>生徒の名前：<%= @student.name %></h2>
+  <h2>生徒の評価：<%= @student.description %></h2>
+  <h2><%= link_to "この生徒の情報を編集する", new_lecture_student_test_path(student_id: @student, lecture_id: @lecture) %></h2>
+  <% @student.tests.each do |test| %>
+    生徒の成績：<%= test.result %>
+    生徒のメモ：<%= test.description %>
+  <% end %>
+  <h2>生徒の今後を予測するボタン</h2>
+  <h2><%= link_to "生徒一覧へもどる", lecture_path(@lecture) %></h2>

@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: Bestudy_production
-  username: Bestudy
-  password: <%= ENV['BESTUDY_DATABASE_PASSWORD'] %>
+  # username: Bestudy
+  # password: <%= ENV['BESTUDY_DATABASE_PASSWORD'] %>

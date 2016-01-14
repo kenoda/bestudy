@@ -1,5 +1,35 @@
-ここに教室一覧が時系列で表示される、それをクリックすると各教室ページへと飛ぶ
-<% @lectures.each do |lecture| %>
-  <a href="lectures/<%= lecture.id %>"> <%= lecture.name %></a>
-<% end %>
 
+<div class="lecture">
+ <h2 <style="height: 32px, width: auto">授業一覧</h2>
+  <div class="lecture_top">
+    <div class = "top">
+      <%= image_tag 'class.jpg',:class =>"class", :alt => "Class" %>
+    </div>
+  </div>
+    <% @lectures.each do |lecture| %>
+    <div class="lecture_all">
+      <div class="lecture_name">
+        <%= lecture.name %>
+      </div>
+      <div class="lecture_description">
+      <%= lecture.description %>
+        <div class="detail">
+          <%= link_to "詳細を見る", lecture_path(lecture) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+</div>
+
+<div class="lecture_top">
+  <div class = "top">
+  <div class="bottom" style="height: 80px">
+    <div class="catch">
+      <a href="lectures/new"> <h2>授業を新しく作る</h2></a>
+    </div>
+  </div>
+  </div>
+</div>
+
+    <a href="/">前の画面へもどる</a>

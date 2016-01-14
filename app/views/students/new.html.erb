@@ -1,11 +1,70 @@
-<div class="contents row">
-    <%= form_tag('/students', method: :post) do %>
-      <h3>
-        生徒の名前を記入
-      </h3>
-      <input placeholder="生徒名" type="string" name="name">
-      <input placeholder="期間" type="string" name="season">
-      <textarea cols="30" name="description" placeholder="生徒の説明" rows="10"></textarea>
-      <input type="submit" value="SENT">
-    <% end %>
+<div class="form">
+  <%= form_for ([@lecture, @student]) do |f| %>
+      <div style="margin: 8px 0">
+      <h3 style="padding-left: 15px">生徒を登録する</h3>
+        <%= f.text_field :name, placeholder: '生徒の名前', value: '' %>
+    </div>
+    <div style="margin: 8px 0">
+      <%= f.text_area :description, placeholder: '生徒についてのコメントを書く', style: 'width: 90%;height: 300px;' %>
+    </div>
+    <div class="row">
+      <div class="col10 push1">
+        <%= button_tag type: "submit", class: "btn btn--block" do %>
+                  投稿する<i class="icon-arrow-right"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
+<!-- <div id="Main">
+  <article class="section">
+    <div class="container">
+      <header class="header header--section">
+        <h2 class="text-middle">
+          <i class="icon-movie color-gray-light"></i>投稿
+        </h2>
+      </header>
+      <div>
+        <ul class="listview js-lazy-load-images">
+          <li style="margin-bottom: 15px">
+            <a class="listview__element--right-icon" href="#">
+              <div class="box">
+                <div class="box__cell w80">
+                  <div class="thumbnail thumbnail--photo">
+                    <div class="thumbnail__figure" style="background-image: url('http://image.eiga.k-img.com/images/movie/81541/poster2/200.jpg?1436408098');"></div>
+                  </div>
+                </div>
+                <div class="box__cell pl1em">
+                  <h3 class="text-middle text-break color-sub">
+                    タイトル
+                  </h3>
+                  <p class="text-xsmall">
+                  </p>
+                  <p class="text-xsmall opacity-60"></p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <form accept-charset="UTF-8" action="/products/1/reviews" class="new_review" id="new_review" method="post">
+        <div style="margin:0;padding:0;display:inline">
+          <input name="utf8" type="hidden" value="✓">
+          <input name="authenticity_token" type="hidden" value="8c4MNosrr8RvXGPN7sdliGb+M4AST6xJtmUf9c87fCM=">
+        </div>
+        <div style="margin: 8px 0">
+          <label for="review_評価" style="{&quot;margin-right&quot;=>8}">評価</label>
+          <input html="{:class=>&quot;search__query&quot;, :style=>&quot;text-align: right;&quot;}" id="review_rate" max="10" min="1" name="review[rate]" placeholder="評価" type="number" value="1">
+        </div>
+        <div style="margin: 8px 0">
+          <textarea id="review_review" name="review[review]" placeholder="レビューを書いてね！" style="width: 100%;height: 300px;"></textarea>
+        </div>
+        <div class="row">
+          <div class="col10 push1">
+            <button class="btn btn--block" type="submit">投稿する<i class="icon-arrow-right"></i></button>                
+          </div>
+        </div>
+      </form>
+    </div>
+  </article>
+</div> -->
