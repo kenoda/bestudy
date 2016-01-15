@@ -7,7 +7,7 @@
       <header id="header">
          <h2 style="height: 32px, width: auto"><%= @student.name %></h2>
          <p class="content"><%= @student.name %>の説明</br>
-         <%= @lecture.description %></p>
+         <%= @student.description %></p>
       </header><!-- /header -->
     </div>
 
@@ -20,7 +20,7 @@
           <div class="lecture_description">
             生徒のメモ</br><%= test.description %>
           </div>
-          <h3>生徒が今後とる成績の予測結果：<%= @forecast %></h3>
+          <h3>生徒の成績の予測結果<br><%= @forecast %></h3>
         </div>
       <% end %>
       </div>
@@ -28,6 +28,7 @@
 
   <div class="bottom" >
     <div id="catch">
-    <%= link_to "生徒の情報を入力する", lecture_path(@lecture) %>
+    <%= link_to "生徒の情報を入力する", new_lecture_student_test_path(@lecture, @student) %>
     </div>
+    <%= link_to "生徒一覧へもどる", lecture_path(@lecture) %>
   </div>

@@ -22,8 +22,8 @@ class LecturesController < ApplicationController
   end
 
   def create
-    Lecture.create(name: params[:name], season: params[:season], description: params[:description])
-#     Lecture.create(create_params)
+    # Lecture.create(name: params[:name], season: params[:season], description: params[:description])
+    Lecture.create(create_params)
 #     lecture1 =Bfilter.new
 #     doc ="真面目に勉強している"
 # lecture1.train(doc, "A")
@@ -33,7 +33,7 @@ class LecturesController < ApplicationController
 
   def show
     @lecture = Lecture.find(params[:id])
-    @student = Student.find(params[:id])
+    @student = Student.all
     # @student = Student.all ここで多対多の関係を使う必要がある
   end
 
@@ -44,7 +44,7 @@ class LecturesController < ApplicationController
 
   private
   def create_params
-    params.require(:lecture).permit(:name, :description, :season)
+    params.require(:lecture).permit(:name, :description, :season).merge(user_id: params[:user_id])
   end
 
 end
