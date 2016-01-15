@@ -24,10 +24,10 @@ class LecturesController < ApplicationController
   def create
     # Lecture.create(name: params[:name], season: params[:season], description: params[:description])
     Lecture.create(create_params)
-#     lecture1 =Bfilter.new
-#     doc ="真面目に勉強している"
-# lecture1.train(doc, "A")
-# lecture1.classifier("すごいよ") => B
+    #     lecture1 =Bfilter.new
+    #     doc ="真面目に勉強している"
+    # lecture1.train(doc, "A")
+    # lecture1.classifier("すごいよ") => B
 
   end
 
@@ -44,7 +44,7 @@ class LecturesController < ApplicationController
 
   private
   def create_params
-    params.require(:lecture).permit(:name, :description, :season).merge(user_id: params[:user_id])
+    params.require(:lecture).permit(:name, :description, :season).merge(user_id: current_user.id)
   end
 
 end
