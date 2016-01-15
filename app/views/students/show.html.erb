@@ -1,10 +1,33 @@
-  <h2>生徒の名前：<%= @student.name %></h2>
-  <h2>生徒の評価：<%= @student.description %></h2>
-  <h2><%= link_to "この生徒の情報を編集する", new_lecture_student_test_path(student_id: @student, lecture_id: @lecture) %></h2>
-  <% @student.tests.each do |test| %>
-    生徒の成績：<%= test.result %>
-    生徒のメモ：<%= test.description %>
-  <% end %>
-  <h2>生徒の今後を予測するボタン</h2>
-  <%= @forecast %>
-  <h2><%= link_to "生徒一覧へもどる", lecture_path(@lecture) %></h2>
+  <div class="lecture">
+    <div class="lecture_top">
+      <h1>生徒の情報</h1>
+      <div class = "top">
+        <%= image_tag 'class.jpg',:class =>"class", :alt => "Class" %>
+      </div>
+      <header id="header">
+         <h2 style="height: 32px, width: auto"><%= @student.name %></h2>
+         <p class="content"><%= @student.name %>の説明</br>
+         <%= @lecture.description %></p>
+      </header><!-- /header -->
+    </div>
+
+    <div id="content">
+      <% @student.tests.each do |test| %>
+        <div class="lecture_all">
+          <div class="lecture_name">
+          生徒の成績：<%=  test.result%>
+          </div>
+          <div class="lecture_description">
+            生徒のメモ</br><%= test.description %>
+          </div>
+          <h3>生徒が今後とる成績の予測結果：<%= @forecast %></h3>
+        </div>
+      <% end %>
+      </div>
+    </div>
+
+  <div class="bottom" >
+    <div id="catch">
+    <%= link_to "生徒の情報を入力する", lecture_path(@lecture) %>
+    </div>
+  </div>

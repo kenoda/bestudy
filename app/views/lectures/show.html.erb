@@ -1,14 +1,36 @@
   <div class="lecture">
-    <h1>教室タイトル：<%= @lecture.name %></h1>
-    <h2>教室の説明：<%= @lecture.description %></h2>
-    <h2>生徒一覧</h2>
-    <div class="lecture_all">
-    <% @lecture.students.each do |student| %>
-      <div class="lecture_name">
-        <h3><%= link_to student.name, lecture_student_path(lecture_id: @lecture, id: student) %></h3>
+    <div class="lecture_top">
+      <h1>生徒一覧</h1>
+      <div class = "top">
+        <%= image_tag 'class.jpg',:class =>"class", :alt => "Class" %>
       </div>
-    <% end %>
+      <header id="header">
+         <h2 style="height: 32px, width: auto"><%= @lecture.name %></h2>
+         <p class="content"><%= @lecture.name %>の生徒一覧を表示します。</br>
+         教室の説明：<%= @lecture.description %></p>
+      </header><!-- /header -->
+    </div>
+
+    <div id="content">
+      <% @lecture.students.each do |student| %>
+        <div class="lecture_all">
+          <div class="lecture_name">
+          <%=  student.name%>
+          </div>
+          <div class="lecture_description">
+            <%= student.description %>
+          </div>
+        <%= link_to "この生徒の詳細を見る", lecture_student_path(lecture_id: @lecture, id: student), :class =>"detail" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+
+  <div class="bottom" >
+    <div id="catch">
+    <%= link_to "生徒を追加する", new_lecture_student_path(lecture_id: @lecture) %>
     </div>
   </div>
-  <h3><a href="<%= @lecture.id %>/students/new">生徒を追加する</a></h3>
+
+  </div>
   <h3><a href="/lectures"> 教室一覧へもどる</a></h3>
