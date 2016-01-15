@@ -139,6 +139,12 @@ div#content {
     margin: 19px auto 0;
 }
 
+.bottom #catch a#look_lecture {
+    background-color: #888888;
+    border: #888888 1px solid;
+    margin-top: 5px;
+}
+
 .bottom .catch {
     padding: 0px 20px;
     font-size: 28px;
