@@ -1,31 +1,35 @@
 
 <div class="lecture">
- <h2 <style="height: 32px, width: auto">授業一覧</h2>
   <div class="lecture_top">
     <div class = "top">
       <%= image_tag 'class.jpg',:class =>"class", :alt => "Class" %>
     </div>
+    <header id="header">
+       <h2 style="height: 32px, width: auto">授業一覧</h2>
+       <p class="content">今まで登録した、授業一覧を表示します。</p>
+    </header><!-- /header -->
   </div>
+
+  <div id="content">
     <% @lectures.each do |lecture| %>
     <div class="lecture_all">
       <div class="lecture_name">
         <%= lecture.name %>
       </div>
       <div class="lecture_description">
-      <%= lecture.description %>
-        <div class="detail">
-          <%= link_to "詳細を見る", lecture_path(lecture) %>
-        </div>
+        <%= lecture.description %>
       </div>
+        <%= link_to "詳細を見る", lecture_path(lecture), :class =>"detail" %>
     </div>
     <% end %>
+  </div>
 
 </div>
 
 <div class="lecture_top">
   <div class = "top">
   <div class="bottom" style="height: 80px">
-    <div class="catch">
+    <div id="catch">
       <a href="lectures/new"> <h2>授業を新しく作る</h2></a>
     </div>
   </div>

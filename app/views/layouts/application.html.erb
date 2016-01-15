@@ -4,8 +4,7 @@
   <meta charset= "utf-8">
   <title>Bestudy</title>
   <meta name ="viewport" content="width=device-width">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <script src="http://code.jquery.com/jquery.min.js"></script><script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery.min.js">
   <script>
     $(function(){
       $("#menubtn").click(function(){
@@ -40,7 +39,7 @@
         </button>
         <nav class ="menu" id="menu">
           <ul>
-            <li><a href="/">トップ</a></li>
+            <li><%= link_to "トップ", root_path %></li>
             <li><a href="users/sign_in">ログイン</a></li>
             <li><a href="users/sign_up">新規登録</a></li>
           </ul>
@@ -49,7 +48,7 @@
     </div>
   </div>
 
-<%= render partial: 'common/header' %>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
