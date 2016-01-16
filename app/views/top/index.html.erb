@@ -72,6 +72,7 @@
       すでにログインした方はこちらから
         <a href="lectures" id="look_lecture">教室を見る</a>
       </div>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
   </body>
 </html>
