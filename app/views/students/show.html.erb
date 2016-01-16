@@ -1,3 +1,19 @@
+<head>
+  <script>
+  $(function(){
+    $('#forecast').click(function(){
+      $(".loading").show();
+      setTimeout(function(){
+        $('.loading').hide();
+        $('#cover').show()
+      },3000);
+
+    });
+  });
+
+  </script>
+</head>
+
   <div class="lecture">
     <div class="lecture_top">
       <h1>生徒の情報</h1>
@@ -20,7 +36,13 @@
           <div class="lecture_description">
             生徒のメモ</br><%= test.description %>
           </div>
-          <h3>生徒の今後の成績予測<br><%= @forecast %></h3>
+          <h3><button id="forecast">生徒の今後の成績予測</button>
+            <div class="loading" style="display:none; padding-top: 15px;">
+            <%= image_tag "loader.gif"%>
+          </div>
+          <div id="cover" style="display: none; padding-top: 15px; " > <%= @forecast %> </div>
+          </h3>
+
         </div>
       <% end %>
       </div>
