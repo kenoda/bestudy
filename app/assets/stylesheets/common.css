@@ -19,7 +19,7 @@ body {
 
 
 /*タイトルなどヘッダー部分*/
-header#header {
+header #header {
     position: relative;
     background-color: #fff;
     max-width: 100%;
@@ -40,7 +40,7 @@ header#header {
 }
 
 /*コンテンツ部分*/
-div#content {
+div #content {
     padding-top: 30px;
 }
 
@@ -630,40 +630,17 @@ img.list {
   font-size: 38px;
 }
 
-.gaiyou .database{
-  display: block;
-  padding-top: 40px;
-  font-size: 38px;
-  background-color: #bfbd13;
-}
-
 .gaiyou .fa-database {
   background-color: #bfbd13;
-  height: 50px;
 }
 
-.gaiyou .chart{
-  display: block;
-  padding-top: 40px;
-  font-size: 38px;
-  background-color: #c58839;
-}
 
 .gaiyou .fa-bar-chart-o{
   background-color: #c58839;
-  height: 50px;
 }
 
-.gaiyou .mail{
-  display: block;
-  padding-top: 40px;
-  font-size: 38px;
-  background-color: #859f46;
-}
 
 .gaiyou .fa-envelope{
   background-color: #859f46;
-  height: 50px;
-
 }
 

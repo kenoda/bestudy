@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   </meta>
+
   <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
@@ -24,9 +25,7 @@
       <div class="pickup-1">
         <div class="gaiyou">
           <a href="/">
-          <div class="database">
-          <%= image_tag 'database38.png', :alt =>"database", :class => "fa fa-database" %>
-          </div>
+            <i class ="fa fa-database"></i>
           <h1>データの分析・解析</h1>
           <p>生徒の授業態度のメモなどから<br>データを分析・解析します。</p>
           </a>
@@ -35,9 +34,7 @@
       <div class="pickup-2">
         <div class="gaiyou">
           <a href="/">
-          <div class="chart">
-          <%= image_tag 'chart15.png', :alt =>"chart", :class => "fa fa-bar-chart-o" %>
-          </div>
+            <i class="fa fa-bar-chart-o"></i>
           <h1>生徒の今後を予測</h1>
           <p>生徒がどこでどんな成績をとりそうか、<br>
           どの生徒がつまづきそうかを予測</p>
@@ -47,9 +44,7 @@
       <div class="pickup-3">
         <div class="gaiyou">
           <a href="/">
-          <div class="mail">
-          <%= image_tag 'mail59.png', :alt =>"mail", :class => "fa fa-envelope" %>
-          </div>
+            <i class="fa fa-envelope"></i>
           <h1>充実のサポート</h1>
           <p>充実のサポートでトラブルにも<br>
           素早く対応します。</p>
@@ -61,13 +56,13 @@
     <div class="info-sub">
     
     </div>
-    <div class="bottom" >
+    <div class="bottom col-xs-12 col-sm-6" style="height: auto;" >
       <div id="catch">
         <a href="users/sign_up">新規登録する</a>
       </div>
-      <p　id="look_sign_in">すでにアカウントを持っている方は<a href="users/sign_in" >ログイン</a></p>
+        <p>すでにアカウントを持っている方は<%= link_to "ログイン", new_user_session_path, method: :get %></p>
     </div>
-    <div class="bottom" >
+    <div class="bottom col-xs-12 col-sm-6" style="height: auto;" >
       <div id="catch">
       すでにログインした方はこちらから
         <a href="lectures" id="look_lecture">教室を見る</a>

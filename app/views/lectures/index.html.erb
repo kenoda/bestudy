@@ -11,7 +11,7 @@
 
   <div id="content">
     <% @lectures.each do |lecture| %>
-    <div class="lecture_all">
+    <div class="lecture_all col-sm-offset-1 col-sm-5 col-md-3 col-md-offset-1">
       <div class="lecture_name">
         <%= lecture.name %>
       </div>
@@ -25,10 +25,12 @@
 
 </div>
 
-  <div class="bottom" >
+  <div class="bottom col-xs-12" style="height: auto;" >
     <div id="catch">
-      <a href="lectures/new"> 授業を新しく作る</a>
+    <%= link_to "授業を新しく作る", new_lecture_path %>
     </div>
+    <%= link_to "前の画面へ戻る", root_path %>
   </div>
 
-    <a href="/">前の画面へもどる</a>
+
+ 

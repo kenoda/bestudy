@@ -13,24 +13,24 @@
 
     <div id="content">
       <% @lecture.students.each do |student| %>
-        <div class="lecture_all">
+        <div class="lecture_all col-sm-offset-1 col-sm-5 col-md-3 col-md-offset-1">
           <div class="lecture_name">
           <%=  student.name%>
           </div>
           <div class="lecture_description">
             <%= student.description %>
           </div>
-        <%= link_to "この生徒の詳細を見る", lecture_student_path(lecture_id: @lecture, id: student), :class =>"detail" %>
+        <%= link_to "この生徒の詳細を見る", student_path(student), :class =>"detail" %>
         </div>
       <% end %>
       </div>
     </div>
 
-  <div class="bottom" >
+  <div class="bottom col-xs-12" style="height: auto;" >
     <div id="catch">
     <%= link_to "生徒を追加する", new_lecture_student_path(lecture_id: @lecture) %>
     </div>
+      <h3><a href="/lectures"> 教室一覧へもどる</a></h3>
   </div>
 
   </div>
-  <h3><a href="/lectures"> 教室一覧へもどる</a></h3>

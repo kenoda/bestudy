@@ -14,14 +14,16 @@ class StudentsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @student = Student.find(params[:id])
-    @lecture = Lecture.find(params[:lecture_id])
+    # binding.pry
+    # @lecture = Lecture.find(params[:lecture_id])
+    @lecture_id = @student.lecture_id
+    @lecture = Lecture.find(@lecture_id)
     @test = Test.all
-
     bfilter = Bfilter.new
     lecture_tests = []
     students = @lecture.students
+
     students.each do |student|
       lecture_tests << student.tests
     end
@@ -34,12 +36,11 @@ class StudentsController < ApplicationController
       end
     end
     
-    # binding.pry
   end
 
   private
   def create_params
-    params.require(:student).permit(:name, :description).merge(lecture_id: params[:lecture_id])
+    params.require(:student).permit(:name, :description, :id).merge(lecture_id: params[:lecture_id])
   end
 
 end

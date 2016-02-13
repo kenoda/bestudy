@@ -58,4 +58,5 @@ end
   gem 'paperclip'
   gem 'kaminari'
   gem 'therubyracer'
+  gem 'webpay'
 
